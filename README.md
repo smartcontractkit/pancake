@@ -1,5 +1,7 @@
 # pancake
 
+![mascot](./our_queen.png)
+
 pancake flattens volatility in ETH -> USD payments
 
 This is a simple hack day project which aims to solve a very simple problem,
