@@ -16,6 +16,9 @@
     "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
     "test": "./node_modules/.bin/truffle test"
   },
+  "scripts": {
+    "dev": "cd ./adapter && npx nodemon server.js"
+  },
   "dependencies": {
     "chainlink": "github:smartcontractkit/chainlink",
     "openzeppelin-solidity": "^1.12.0"

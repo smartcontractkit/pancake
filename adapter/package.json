@@ -4,7 +4,7 @@
   "description": "Execute trade from Cryptocurrency to Fiat",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
     "test": "jest test"
   },
   "author": "Alex Kwiatkowski & John Barker",
