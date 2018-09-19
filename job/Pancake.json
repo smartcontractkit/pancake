@@ -1,0 +1,6 @@
+{
+  "initiators": [{ "type": "runlog" }],
+  "tasks": [
+    { "type": "HttpPost", "params": { "url": "http://localhost:6690" } }
+  ]
+}
