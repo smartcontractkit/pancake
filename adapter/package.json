@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "jest test"
+    "test": "jest",
+    "test-watch": "jest --watchAll"
   },
   "author": "Alex Kwiatkowski & John Barker",
   "license": "MIT",
@@ -14,6 +15,11 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "superagent": "^4.0.0-beta.5",
+    "supertest": "^3.3.0"
   }
 }
