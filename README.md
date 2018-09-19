@@ -20,3 +20,5 @@ So far the plan is to have:
   1. A receiving Solidity contract, that upon transfer of some ETH, transfers to a new target address (your exchange's wallet) and creates a RunLog for chainlink
   2. A JobSpec that listens for the above RunLog and triggers an external adaptor
   3. A small service, likely written in Node/JS, that upon triggering by chainlink, will watch for the amount to be deposited in the exchange, then trigger a sell.
+
+![flow](./pancake-flow.jpg)
