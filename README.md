@@ -24,3 +24,17 @@ So far the plan is to have:
   3. A small service, likely written in Node/JS, that upon triggering by chainlink, will watch for the amount to be deposited in the exchange, then trigger a sell.
 
 ![flow](./pancake-flow.jpg)
+
+# How
+
+So how do you use this? First you'll need:
+
+  1. node + npm, version
+  2. a running ethereum node, with RPC listening on 18545
+  3. an ethereum wallet to get ETH shipped to
+
+Directions:
+
+  1. Create an ethereum account, with geth you can do `geth account new`
+  2. Migrate the job spec and contract with: `WALLET_ADDRESS=$YourWalletAddress npm run deploy`
+  3. Transfer some coins to your contract address!

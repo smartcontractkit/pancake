@@ -22,15 +22,13 @@
     "openzeppelin-solidity": "^1.12.0"
   },
   "devDependencies": {
-    "bignumber.js": "^7.2.1",
     "eslint": "^5.6.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "ganache-cli": "^6.1.8",
-    "moment": "^2.22.2",
+    "request-promise": "^4.2.2",
     "solium": "^1.1.8",
     "solium-plugin-zeppelin": "^0.0.2",
     "truffle": "^4.1.14",
