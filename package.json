@@ -6,18 +6,16 @@
     "compile": "./node_modules/.bin/truffle compile",
     "console": "./node_modules/.bin/truffle console --network development",
     "deploy:dev": "./node_modules/.bin/truffle deploy --reset --network development",
+    "dev": "cd ./adapter && npx nodemon server.js",
     "flatten": "./node_modules/.bin/truffle-flattener contracts/MyContract.sol > flattened/MyContract.sol",
     "ganache": "./node_modules/.bin/ganache-cli -b 3 -p 9045 --deterministic",
     "lint": "./node_modules/.bin/eslint .",
+    "lint:all": "npm run lint && npm run lint:sol",
+    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
     "lint:fix": "./node_modules/.bin/eslint . --fix",
     "lint:sol": "./node_modules/.bin/solium -d .",
     "lint:sol:fix": "./node_modules/.bin/solium -d . --fix",
-    "lint:all": "npm run lint && npm run lint:sol",
-    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
     "test": "./node_modules/.bin/truffle test"
-  },
-  "scripts": {
-    "dev": "cd ./adapter && npx nodemon server.js"
   },
   "dependencies": {
     "chainlink": "github:smartcontractkit/chainlink",
