@@ -1,0 +1,8 @@
+{
+  "initiators": [
+    {"type": "web"}
+  ],
+  "tasks": [
+    {"type": "pancake"}
+  ]
+}
