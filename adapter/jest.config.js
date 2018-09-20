@@ -14,7 +14,6 @@ replayer.filter({
 
 const sensitive = ['GDAX_API_PASSPHRASE', 'GDAX_API_KEY', 'GDAX_API_SECRET']
 sensitive.forEach(s => {
-  console.log('--- should sub: %o', process.env[s])
   replayer.substitute(
     '***',
     () => process.env[s]
