@@ -11,6 +11,7 @@
   "author": "Alex Kwiatkowski & John Barker",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ccxt": "^1.17.321",
     "express": "^4.16.3"
   },
