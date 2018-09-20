@@ -13,18 +13,19 @@ const exchangeSymbol = symbol => {
   return exchangeAdapter.symbols.find(s => normalizeSymbol(s) === normalized)
 }
 
-class Sell {
+class MarketSell {
   constructor(symbol, amount) {
     this.symbol = symbol
     this.amount = amount
   }
 
   async execute() {
-    await exchangeAdapter.createMarketSellOrder(
+    const order = await exchangeAdapter.createMarketSellOrder(
       exchangeSymbol(this.symbol),
       this.amount
     )
+    return await exchangeAdapter.fetchOrder(order.id)
   }
 }
 
-module.exports = Sell
+module.exports = MarketSell
