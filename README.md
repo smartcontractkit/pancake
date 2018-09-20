@@ -39,7 +39,7 @@ So how do you use this? First you'll need:
   1. Create a [GDAX sandbox account](https://public.sandbox.pro.coinbase.com)
   2. Create [API credentials](https://public.sandbox.pro.coinbase.com/profile/api) with view & trade permissions
   3. Store the API credentials in a `.env` file and apply them to your current shell `source .env`
-  4. Start the `pancake-trader` service `npm run dev / yarn dev` ([configuration options]()
+  4. Start the `pancake-trader` service `npm run dev / yarn dev` ([configuration options](./PANCAKE_TRADER_CONFIGURATION_OPTIONS.md))
 
 ### Chainlink Setup Directions:
 
