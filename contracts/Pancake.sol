@@ -29,12 +29,12 @@ contract Pancake is Chainlinked, Ownable {
     //destinationWallet.transfer(this.balance());
 
     // Trigger the job run
-    ChainlinkLib.Run memory run = newRun(specId, this, "fulfill(bytes32)");
+    ChainlinkLib.Run memory run = newRun(specId, this, "fulfill(bytes32,bytes32)");
     chainlinkRequest(run, LINK(1));
   }
 
   // No-op, needed for `newRun`
-  function fulfill(bytes32 _requestId)
+  function fulfill(bytes32 _requestId, bytes32 _data)
     public
     checkChainlinkFulfillment(_requestId) {
   }

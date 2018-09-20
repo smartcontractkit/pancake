@@ -44,7 +44,7 @@ module.exports = function(deployer) {
       specID,
       WALLET_ADDRESS);
 
-    const amount = "1000000000000000000";
-    await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount, {gas: 100000});
+    const amount = "1000000000000";
+    await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount, {gas: 1000000});
   });
 };

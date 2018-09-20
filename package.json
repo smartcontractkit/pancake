@@ -28,6 +28,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "ethereumjs-abi": "^0.6.5",
     "request-promise": "^4.2.2",
     "solium": "^1.1.8",
     "solium-plugin-zeppelin": "^0.0.2",
