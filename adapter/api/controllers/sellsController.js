@@ -7,6 +7,11 @@ const Sell = require('../models/sell')
 
 const unixNow = () => (+(new Date()))
 
+const logSuccess = message => console.log(`✔✔✔ ${message}`)
+const logError = message => console.log(`!!! ${message}`)
+const logPending = message => console.log(`... ${message}`)
+const logMessage = message => console.log(`--- ${message}`)
+
 const sellBalance = startedAt => {
   return async function f() {
     const balance = new Balance()
@@ -16,12 +21,12 @@ const sellBalance = startedAt => {
       const sell = new Sell('eth_usd', eth.free)
 
       sell.execute()
-      console.log(`✔✔✔ Successfully sold ${eth.free} ETH`)
+      logSuccess(`Successfully sold ${eth.free} ETH`)
     } else {
-      console.log(`... No ETH balance to sell. Check balance again in ${POLL_BALANCE_EVERY}ms`)
+      logPending(`No ETH balance to sell. Check balance again in ${POLL_BALANCE_EVERY}ms`)
 
       if (unixNow() - startedAt >= BALANCE_TIMEOUT) {
-        console.log('!!! Timed out waiting for ETH balance to confirm')
+        logError('Timed out waiting for ETH balance to confirm')
       } else {
         setTimeout(f, POLL_BALANCE_EVERY)
       }
@@ -30,9 +35,19 @@ const sellBalance = startedAt => {
 }
 
 exports.create = async function (req, res) {
-  const startedAt = unixNow()
-  await sellBalance(startedAt)()
+  const jobRunId = req.body.id
 
-  res.statusCode = 202
-  res.send()
+  if (jobRunId) {
+    logMessage(`Received sell request for job run id: ${jobRunId}`)
+
+    const startedAt = unixNow()
+    await sellBalance(startedAt)()
+
+    res.statusCode = 202
+    res.send()
+  } else {
+    logError(`Received sell request without a job run id in params: '${JSON.stringify(req.body)}'. No ETH will be sold`)
+    res.statusCode = 422
+    res.send()
+  }
 }
