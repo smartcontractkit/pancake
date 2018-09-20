@@ -57,3 +57,13 @@ So how do you use this? First you'll need:
   ![confirm deposit](./gdax-sandbox-confirm-deposit.png)
   4. Verify that `pancake-trader` has sold your ETH by checking for the log `✔✔✔ Successfully sold 10 ETH`
   5. Verify that GDAX has sold your ETH by checking the [filler orders](https://public.sandbox.pro.coinbase.com/orders/filled)
+
+# Demos
+
+### Successful Web Initiator
+
+[![Watch the video](./successful-web-initiator.png)](http://recordit.co/aBpZMufaDg)
+
+### Timed Out Web Initiator
+
+[![Watch the video](./timed-out-web-initiator.png)](http://recordit.co/KTQxjDe0Ln)
