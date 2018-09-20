@@ -44,10 +44,18 @@ exports.create = async function (req, res) {
     await sellBalance(startedAt)()
 
     res.statusCode = 202
-    res.send()
+    res.json({
+      jobRunId: jobRunId,
+      pending: true
+    })
   } else {
-    logError(`Received sell request without a job run id in params: '${JSON.stringify(req.body)}'. No ETH will be sold`)
+    errorMsg = `Received sell request without a job run id in params: '${JSON.stringify(req.body)}'. No ETH will be sold`
+    logError(errorMsg)
+
     res.statusCode = 422
-    res.send()
+    res.json({
+      jobRunId: jobRunId,
+      error: errorMsg
+    })
   }
 }
