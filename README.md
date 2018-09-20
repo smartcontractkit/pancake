@@ -29,12 +29,31 @@ So far the plan is to have:
 
 So how do you use this? First you'll need:
 
-  1. node + npm, version
-  2. a running ethereum node, with RPC listening on 18545
-  3. an ethereum wallet to get ETH shipped to
+  1. NodeJS + npm/yarn. NodeJS >= 8.x
+  2. A running Ethereum node, with RPC listening on 18545
+  3. An Ethereum wallet to get ETH shipped to
 
-Directions:
+
+### Pancake Trader Setup:
+
+  1. Create a [GDAX sandbox account](https://public.sandbox.pro.coinbase.com)
+  2. Create [API credentials](https://public.sandbox.pro.coinbase.com/profile/api) with view & trade permissions
+  3. Store the API credentials in a `.env` file and apply them to your current shell `source .env`
+  4. Start the `pancake-trader` service `npm run dev / yarn dev` ([configuration options]()
+
+### Chainlink Setup Directions:
 
   1. Create an ethereum account, with geth you can do `geth account new`
   2. Migrate the job spec and contract with: `WALLET_ADDRESS=$YourWalletAddress npm run deploy`
-  3. Transfer some coins to your contract address!
+
+### Run Demo Directions
+
+  1. Transfer some coins to your contract address!
+  2. This will trigger the job run on your Chainlink node. Verify that the job 
+  run has sent the request from the bridge adapter by checking the `pancake-trader` 
+  logs. You should see the following message every 100ms `... No ETH balance to sell. Check balance again in 100ms`
+  3. Simulate GDAX crediting your account by depositing funds into the sandbox
+  ![show deposit](./gdax-sandbox-show-deposit.png)
+  ![confirm deposit](./gdax-sandbox-confirm-deposit.png)
+  4. Verify that `pancake-trader` has sold your ETH by checking for the log `✔✔✔ Successfully sold 10 ETH`
+  5. Verify that GDAX has sold your ETH by checking the [filler orders](https://public.sandbox.pro.coinbase.com/orders/filled)
