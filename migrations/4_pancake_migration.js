@@ -44,6 +44,7 @@ module.exports = function(deployer) {
       specID,
       WALLET_ADDRESS);
 
-    console.log("Pancake deployed =>", Contract.address);
+    const amount = "1000000000000000000";
+    await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount, {gas: 100000});
   });
 };
