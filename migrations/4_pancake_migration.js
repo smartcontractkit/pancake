@@ -44,7 +44,7 @@ module.exports = function(deployer) {
       specID,
       WALLET_ADDRESS);
 
-    const amount = "1000000000000";
-    await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount, {gas: 1000000});
+    const amount = web3.toWei("1", "ether");
+    await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount);
   });
 };
