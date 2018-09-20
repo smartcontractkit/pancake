@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "jest",
-    "test-watch": "jest --watchAll"
+    "test": "VCR_MODE=cache jest",
+    "test-watch": "VCR_MODE=cache jest --watchAll"
   },
   "author": "Alex Kwiatkowski & John Barker",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
+    "replayer": "^2.2.3",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"
   }

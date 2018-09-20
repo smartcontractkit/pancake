@@ -1,0 +1,34 @@
+{
+  "url": "https://api-public.sandbox.gdax.com/accounts",
+  "method": "GET",
+  "headers": {
+    "cb-access-key": [
+      "***"
+    ],
+    "cb-access-sign": [
+      "xeh/IlxYsKzTL3778SZyioPXNOd17PMfoLpiEjKuilA="
+    ],
+    "cb-access-timestamp": [
+      "1537402022"
+    ],
+    "cb-access-passphrase": [
+      "***"
+    ],
+    "content-type": [
+      "application/json"
+    ],
+    "accept-encoding": [
+      "gzip,deflate"
+    ],
+    "user-agent": [
+      "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+    ],
+    "connection": [
+      "close"
+    ],
+    "accept": [
+      "*/*"
+    ]
+  },
+  "body": ""
+}

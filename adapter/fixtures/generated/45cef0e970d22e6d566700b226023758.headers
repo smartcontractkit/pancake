@@ -1,0 +1,16 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "x-powered-by": "Express",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "35",
+    "etag": "W/\"23-kYrCkLNnCaHGYmipG91uQvDQ8w0\"",
+    "date": "Thu, 20 Sep 2018 00:07:02 GMT",
+    "connection": "close"
+  },
+  "url": "http://127.0.0.1:55091/trades",
+  "time": 1113,
+  "request": {
+    "method": "GET"
+  }
+}
