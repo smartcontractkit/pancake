@@ -16,11 +16,12 @@ const sellBalance = startedAt => {
       const sell = new Sell('eth_usd', eth.free)
 
       sell.execute()
+      console.log(`✔✔✔ Successfully sold ${eth.free} ETH`)
     } else {
-      console.log(`*** No ETH balance to sell. Check balance again in ${POLL_BALANCE_EVERY}ms ***`)
+      console.log(`... No ETH balance to sell. Check balance again in ${POLL_BALANCE_EVERY}ms`)
 
       if (unixNow() - startedAt >= BALANCE_TIMEOUT) {
-        console.log('*** Timed out waiting for ETH balance to confirm ***')
+        console.log('!!! Timed out waiting for ETH balance to confirm')
       } else {
         setTimeout(f, POLL_BALANCE_EVERY)
       }
