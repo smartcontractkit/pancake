@@ -1,5 +1,8 @@
-var LinkToken = artifacts.require("./LinkToken.sol");
+const helpers = require("./support/helpers.js");
+
+const LinkToken = artifacts.require("./LinkToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(LinkToken);
+  let Contract = deployer.deploy(LinkToken);
+  helpers.updateState({LinkToken: Contract.address});
 };

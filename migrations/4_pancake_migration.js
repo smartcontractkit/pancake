@@ -1,3 +1,5 @@
+const helpers = require("./support/helpers.js");
+
 const request = require("request-promise").defaults({jar: true});
 const fs = require("fs");
 const path = require("path");
@@ -5,14 +7,6 @@ const path = require("path");
 const Oracle = artifacts.require("./Oracle.sol");
 const LinkToken = artifacts.require("./LinkToken.sol");
 const Pancake = artifacts.require("./Pancake.sol");
-
-abort = (message) => {
-  return (error) => {
-    console.error(message);
-    console.error(error);
-    process.exit(1);
-  };
-};
 
 module.exports = function(deployer) {
   deployer.then(async () => {
@@ -43,6 +37,8 @@ module.exports = function(deployer) {
       Oracle.address,
       specID,
       WALLET_ADDRESS);
+
+    helpers.updateState({Pancake: Contract.address});
 
     const amount = web3.toWei("1", "ether");
     await LinkToken.at(LinkToken.address).transfer(Pancake.address, amount);
